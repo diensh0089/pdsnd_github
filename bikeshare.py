@@ -72,7 +72,7 @@ def load_data(city, month, day):
         df = df[df['day_of_week'] == day.title()]
     return df
 
-def time_stats(df):
+def time_status(df):
     """Displays statistics on the most frequent times of travel."""
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
@@ -132,7 +132,7 @@ def trip_duration_stats(df):
     print('-'*40)
 
 
-def user_stats(df):
+def user_status(df):
     """Displays statistics on bikeshare users."""
     print('\nCalculating User Stats...\n')
     start_time = time.time()
@@ -179,10 +179,10 @@ def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
-        time_stats(df)
+        time_status(df)
         station_stats(df)
         trip_duration_stats(df)
-        user_stats(df)
+        user_status(df)
         show_raw_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
